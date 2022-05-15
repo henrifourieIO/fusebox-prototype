@@ -4,10 +4,16 @@
     padding: 1em 1.5em;
     color: #fff;
     font-size: large;
-    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 300ms;
+    transition: background-color cubic-bezier(0.175, 0.885, 0.32, 1.275) 300ms;
+    transition: transform cubic-bezier(0.175, 0.885, 0.32, 1.275) 1000ms;
+    height: fit-content;
 
     &:hover {
         background-color: #fff;
         color: #000;
+    }
+
+    &.hide {
+        transform: scaleY(0);
     }
 }

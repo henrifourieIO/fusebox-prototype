@@ -1,7 +1,10 @@
 import styles from "./styles.module.scss";
 import { Lines } from "react-preloaders";
+import CustomCursorContext from "../mouseFollower/context/CustomCursorContext";
+import React, { useContext } from "react";
 
 const Preloader = ({ loading, open, setOpen }) => {
+  const { addType } = useContext(CustomCursorContext);
   return (
     <>
       <div
@@ -20,8 +23,10 @@ const Preloader = ({ loading, open, setOpen }) => {
         }}
       >
         <button
-          className={styles.closeBtn}
-          onClick={() => setOpen(!open)}
+          className={`${styles.closeBtn} ${loading ? styles.hide : ''}`}
+          onClick={() => {setOpen(!open); addType({ hover: false, text: "" })}}
+          onMouseEnter={() => addType({ hover: true, text: "Open" })}
+          onMouseLeave={() => addType({ hover: false, text: "" })}
           disabled={!open}
         >
           EXPLORE
