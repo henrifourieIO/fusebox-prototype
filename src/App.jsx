@@ -12,12 +12,14 @@ function App() {
   const [loading, setLoading] = useState(true);
   const CanvasComponent = lazy(() => import('./components/THREE/canvas'));
   useEffect(() => {
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000)
   }, []);
 
   return (
     <>
-     <Preloader />
+     <Preloader loading={loading} />
         <Suspense fallback={null}>
           <CustomCursorManager>
             <Menu />
