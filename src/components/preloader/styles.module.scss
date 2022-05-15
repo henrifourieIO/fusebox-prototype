@@ -1,9 +1,13 @@
-.preloader {
-    width: 100vw;
-    height: 100vh;
-    background-color: red;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 9999;
+.closeBtn {
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding: 1em 1.5em;
+    color: #fff;
+    font-size: large;
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 300ms;
+
+    &:hover {
+        background-color: #fff;
+        color: #000;
+    }
 }

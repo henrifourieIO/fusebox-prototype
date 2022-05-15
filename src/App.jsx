@@ -17,8 +17,8 @@ function App() {
 
   return (
     <>
-      {!loading ? (
-        <Suspense fallback={<Preloader />}>
+     <Preloader />
+        <Suspense fallback={null}>
           <CustomCursorManager>
             <Menu />
             <Background />
@@ -26,11 +26,8 @@ function App() {
             <Hero />
             <CanvasComponent />
           </CustomCursorManager>
-          
         </Suspense>
-      ) : (
-        <Preloader />
-      )}
+        
     </>
   );
 }
