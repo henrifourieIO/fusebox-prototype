@@ -10,6 +10,7 @@ import { useEffect, useState, lazy } from "react";
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [open, setOpen] = useState(true);
   const CanvasComponent = lazy(() => import('./components/THREE/canvas'));
   useEffect(() => {
     setTimeout(() => {
@@ -19,13 +20,15 @@ function App() {
 
   return (
     <>
-     <Preloader loading={loading} />
+     <Preloader loading={loading} open={open} setOpen={setOpen} />
         <Suspense fallback={null}>
           <CustomCursorManager>
-            <Menu />
-            <Background />
-            <MouseFollower />
-            <Hero />
+            {!open ? <>
+              <Menu />
+              <Background />
+              <MouseFollower />
+              <Hero />
+            </> : null}
             <CanvasComponent />
           </CustomCursorManager>
         </Suspense>

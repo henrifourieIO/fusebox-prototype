@@ -1,10 +1,7 @@
 import styles from "./styles.module.scss";
-import { useState } from "react";
 import { Lines } from "react-preloaders";
 
-const Preloader = ({ loading }) => {
-  const [open, setOpen] = useState(true);
-
+const Preloader = ({ loading, open, setOpen }) => {
   return (
     <>
       <div
