@@ -1,0 +1,101 @@
+.hero {
+    width: 90%;
+    max-width: 1200px;
+    z-index: 10;
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    margin: auto auto;
+    z-index: 999;
+
+    .title {
+        position: relative;
+        width: 100%;
+
+        .titleWrapper {
+            font-size: 60px;
+            line-height: 1em;
+            position: relative;
+
+
+            .textLine {
+                overflow: hidden;
+                position: relative;
+                height: 140px;
+                width: 100%;
+                max-width: 700px;
+
+                div {
+                    height: 140px;
+                }
+
+                h1 {
+                    line-height: 140px;
+                    margin: 0;
+                }
+            }
+        }
+
+        @media screen and (max-width: 820px) {
+            .titleWrapper {
+                font-size: 40px;
+                
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .titleWrapper {
+                font-size: 20px;
+                margin-top: 10vh;
+                .textLine {
+                    height: 80px;
+
+                    h1 {
+                        line-height: 80px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .next {
+        color: #fff;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 70px;
+
+        div {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+
+
+        &:hover {
+            div {
+                opacity: 1;
+                pointer-events: none;
+
+            }
+        }
+
+
+    }
+
+    @media screen and (max-width: 820px) {
+        min-height: 0;
+        flex-direction: column;
+        margin-top: 100px;
+        height: calc(100vh - 100px);
+    }
+}

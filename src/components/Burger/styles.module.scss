@@ -1,0 +1,54 @@
+.burger {
+    position: relative;
+    width: 50px;
+    min-height: 20px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    transition: height cubic-bezier(0.23, 1, 0.320, 1) 700ms;
+    border: 0;
+    cursor: pointer;
+    padding: 10px 0;
+    margin: 0;
+
+    div {
+        background-color: #fff;
+        height: 2px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .barOne {
+        width: 100%;
+    }
+
+    .barTwo {
+        width: 50%;
+        transition: all cubic-bezier(0.23, 1, 0.320, 1) 700ms;
+        margin-top: 16px;
+    }
+
+    .blob {
+        background: rgb(255, 255, 255);
+        opacity: 0;
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 100%;
+        transition: all cubic-bezier(0.19, 1, 0.22, 1) 1200ms;
+    }
+
+    &:hover {
+        .barTwo {
+            width: 100%;
+        }
+        .blob {
+            opacity: 0.06;
+        }
+    }
+}
