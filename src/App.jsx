@@ -26,9 +26,9 @@ function App() {
             {!open ? <>
               <Menu />
               <Background />
-              <MouseFollower />
               <Hero />
             </> : null}
+            <MouseFollower />
             <CanvasComponent />
           </CustomCursorManager>
         </Suspense>
